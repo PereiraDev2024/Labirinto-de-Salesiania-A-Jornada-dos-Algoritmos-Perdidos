@@ -1,0 +1,35 @@
+Arquivo de execução - Labirinto de Salesiania
+Kaiky Brener de Souza Pereira
+
+Para rodar:
+  javac Main.java
+  java Main
+
+Exemplos de uso (estão no main):
+  acharCaminho(montar(desenho1));  // caso 1
+  acharCaminho(montar(desenho2));  // caso 2
+  acharCaminho(montar(desenho3));  // caso 3
+  acharCaminho(montar(desenho4));  // labirinto do enunciado
+
+Saída do programa:
+
+Caso 1
+Caminho percorrido: S → (0,1) → (0,2) → (1,2) → (2,2) → (2,3) → (3,3) → (4,3) → (4,4) → E
+Tesouros coletados: 0
+
+Caso 2
+Caminho percorrido: S → (0,1) → (0,2) → (1,2) → (2,2) → (2,3) → (2,4) → T → (3,4) → (4,4) → (4,3) → (4,2) → T → (4,1) → (4,0) → (5,0) → E
+Tesouros coletados: 2
+
+Caso 3
+Não há saída possível!
+
+Labirinto do enunciado
+S . . # . . 
+# # . # . # 
+. . . . T . 
+. # # # . # 
+. . T . . E 
+# # # # # # 
+Caminho percorrido: S → (0,1) → (0,2) → (1,2) → (2,2) → (2,3) → (2,4) → T → (3,4) → (4,4) → (4,3) → (4,2) → T → (4,3) → (4,4) → E
+Tesouros coletados: 2

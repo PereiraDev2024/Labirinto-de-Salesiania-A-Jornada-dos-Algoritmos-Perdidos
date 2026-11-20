@@ -1,0 +1,51 @@
+Labirinto de Salesiania - Explicação da estratégia gulosa
+Kaiky Brener de Souza Pereira
+
+Como o programa funciona
+
+Eu dividi o trabalho em duas partes.
+
+A primeira é a recursão. O método buscar() sai de uma casa e chama ele mesmo
+para cima, baixo, esquerda e direita. Ele volta quando bate em parede, sai do
+labirinto ou chega numa casa que já passou. Quando chega no destino, guarda o
+caminho se for menor que o melhor que já tinha. Depois desmarca a casa, para
+os outros caminhos poderem passar por ela (backtracking). O método
+menorCaminho() usa isso para achar o caminho mais curto entre dois pontos.
+
+A segunda é o guloso, dentro do acharCaminho(). Primeiro ele confere se existe
+caminho de S até E. Se não existir, mostra "Não há saída possível!".
+
+Estratégia gulosa
+
+A escolha gulosa é sempre ir no tesouro que está mais perto de onde o herói
+está agora. A cada vez:
+
+1. Calcula o menor caminho até cada tesouro que ainda falta.
+2. Ignora o tesouro que não dá para alcançar ou que não deixa mais chegar na
+   saída depois.
+3. Vai no mais perto. Se dois estiverem à mesma distância, fica o primeiro que
+   aparece lendo a matriz de cima para baixo.
+4. Pega o tesouro, ele some do labirinto, e repete a partir dali.
+
+Quando não sobra tesouro, vai para a saída pelo menor caminho.
+
+Exemplo no labirinto do enunciado
+
+- Em (0,0): T(2,4) está a 6 passos e T(4,2) a 10. Vai no T(2,4).
+- Em (2,4): só falta o T(4,2), a 4 passos. Vai nele.
+- Em (4,2): acabaram os tesouros. Vai para a saída E, a 3 passos.
+
+Resultado: 2 tesouros coletados.
+
+Limitação
+
+O guloso olha só o tesouro mais perto naquela hora, então nem sempre o
+caminho total é o menor possível. Mesmo assim, ele pega todos os tesouros que
+dá para pegar, que é o que o enunciado pede.
+
+Sobre os casos de teste
+
+O enunciado só mostra as saídas esperadas dos casos 1, 2 e 3, e não os
+labirintos. Então eu montei um labirinto para cada caso, parecido com o do
+enunciado, que dá exatamente a saída esperada. O labirinto do enunciado
+também roda no final do programa.
